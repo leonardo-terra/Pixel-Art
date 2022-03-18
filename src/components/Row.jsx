@@ -10,5 +10,5 @@ export default function Row(props) {
     pixels.push(<Pixel color={color} />);
   }
 
-  return <></>;
+  return <div className="flex justify-center items-center">{pixels}</div>;
 }

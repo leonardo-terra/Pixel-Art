@@ -1,7 +1,11 @@
 import Editor from "./components/Editor";
 
 function App() {
-  return <Editor />;
+  return (
+    <div className="bg-black text-white">
+      <Editor />
+    </div>
+  );
 }
 
 export default App;

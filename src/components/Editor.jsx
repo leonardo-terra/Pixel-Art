@@ -51,7 +51,6 @@ export default function Editor() {
             </label>
           </div>
         )}
-
         <div className="flex justify-center items-center">
           <button type="button" className="" onClick={startDrawing}>
             {buttonText}
@@ -65,11 +64,13 @@ export default function Editor() {
             />
           </div>
         )}
-        <DrawingPanel
-          width={panelWidth}
-          height={panelHeight}
-          color={selectedColor}
-        />
+        {hideOptions && (
+          <DrawingPanel
+            width={panelWidth}
+            height={panelHeight}
+            color={selectedColor}
+          />
+        )}
       </div>
     </>
   );
