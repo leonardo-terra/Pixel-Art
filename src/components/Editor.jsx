@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../index.css";
+import { CirclePicker } from "react-color";
+import DrawingPanel from "./DrawingPanel";
 
 export default function Editor() {
   const [panelWidth, setPanelWidth] = useState(16);
@@ -16,6 +18,10 @@ export default function Editor() {
     buttonText === "Gerar quadro"
       ? setButtonText("Reiniciar")
       : setButtonText("Gerar quadro");
+  }
+
+  function changeColor(color) {
+    setSelectedColor(color.hex);
   }
 
   return (
@@ -51,6 +57,19 @@ export default function Editor() {
             {buttonText}
           </button>
         </div>
+        {hideOptions && (
+          <div className="flex justify-center items-center">
+            <CirclePicker
+              color={selectedColor}
+              onChangeComplete={changeColor}
+            />
+          </div>
+        )}
+        <DrawingPanel
+          width={panelWidth}
+          height={panelHeight}
+          color={selectedColor}
+        />
       </div>
     </>
   );
