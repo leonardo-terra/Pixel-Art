@@ -16,9 +16,15 @@ export default function DrawingPanel(props) {
       <div className="flex flex-col items-center" ref={panelRef}>
         {rows}
       </div>
-      <button type="button" onClick={() => exportComponentAsPNG(panelRef)}>
-        Salve sua arte!
-      </button>
+      <div className="inline-block ">
+        <button
+          className=""
+          type="button"
+          onClick={() => exportComponentAsPNG(panelRef)}
+        >
+          Salve sua arte!
+        </button>
+      </div>
     </>
   );
 }

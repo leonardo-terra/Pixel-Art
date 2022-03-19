@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../index.css";
-import { CirclePicker } from "react-color";
+import { GithubPicker } from "react-color";
 import DrawingPanel from "./DrawingPanel";
 
 export default function Editor() {
@@ -25,15 +25,23 @@ export default function Editor() {
   }
 
   return (
-    <>
-      <div className="border-4 ">
-        <h1 className="text-center">PIXEL ART !</h1>
-        {hidePanel && <h2>Qual o tamanho da sua arte? </h2>}
+    <div className="flex justify-center items center p-5 min-h-screen">
+      <div className="border-4 p-4 text-2xl">
         {hidePanel && (
-          <div className="flex justify-center items-center h-full">
+          <>
+            <h1 className="text-center text-6xl mb-10">PIXEL ART !</h1>
+            <h2 className="text-center text-3xl mb-20">
+              Qual o tamanho da sua arte?{" "}
+            </h2>
+          </>
+        )}
+        {hidePanel && (
+          <div className="flex justify-around">
             <label htmlFor="width">
-              Comprimento:
+              Eixo X
+              <br />
               <input
+                className="w-20 h-20 text-4xl text-black text-center"
                 id="width"
                 type="number"
                 defaultValue={panelWidth}
@@ -41,8 +49,10 @@ export default function Editor() {
               />
             </label>
             <label htmlFor="height">
-              Altura:
+              Eixo Y
+              <br />
               <input
+                className="w-20 h-20 text-4xl text-black text-center"
                 id="height"
                 type="number"
                 defaultValue={panelHeight}
@@ -51,19 +61,18 @@ export default function Editor() {
             </label>
           </div>
         )}
-        <div className="flex justify-center items-center">
-          <button type="button" className="" onClick={startDrawing}>
-            {buttonText}
-          </button>
-        </div>
+
         {hideOptions && (
-          <div className="flex justify-center items-center">
-            <CirclePicker
+          <div className=" justify-center items-center mb-5">
+            <h1>Qual a cor de hoje?</h1>
+            <GithubPicker
+              width=""
               color={selectedColor}
               onChangeComplete={changeColor}
             />
           </div>
         )}
+
         {hideOptions && (
           <DrawingPanel
             width={panelWidth}
@@ -71,7 +80,13 @@ export default function Editor() {
             color={selectedColor}
           />
         )}
+
+        <div className="inline-block ml-20 mt-10">
+          <button type="button" className="" onClick={startDrawing}>
+            {buttonText}
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
