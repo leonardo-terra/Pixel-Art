@@ -25,12 +25,12 @@ export default function Editor() {
   }
 
   return (
-    <div className="flex justify-center items center p-5 min-h-screen">
-      <div className="border-4 p-4 text-2xl">
+    <div className="flex justify-center min-h-screen p-5 items center">
+      <div className="p-4 text-2xl border-4 art-container">
         {hidePanel && (
           <>
-            <h1 className="text-center text-6xl mb-10">PIXEL ART !</h1>
-            <h2 className="text-center text-3xl mb-20">
+            <h1 className="mb-10 text-6xl text-center">PIXEL ART !</h1>
+            <h2 className="mb-20 text-3xl text-center">
               Qual o tamanho da sua arte?{" "}
             </h2>
           </>
@@ -41,7 +41,7 @@ export default function Editor() {
               Eixo X
               <br />
               <input
-                className="w-20 h-20 text-4xl text-black text-center"
+                className="w-20 h-20 text-4xl text-center text-black"
                 id="width"
                 type="number"
                 defaultValue={panelWidth}
@@ -52,7 +52,7 @@ export default function Editor() {
               Eixo Y
               <br />
               <input
-                className="w-20 h-20 text-4xl text-black text-center"
+                className="w-20 h-20 text-4xl text-center text-black"
                 id="height"
                 type="number"
                 defaultValue={panelHeight}
@@ -63,7 +63,7 @@ export default function Editor() {
         )}
 
         {hideOptions && (
-          <div className=" justify-center items-center mb-5">
+          <div className="items-center justify-center mb-5 ">
             <h1>Qual a cor de hoje?</h1>
             <GithubPicker
               width=""
@@ -81,7 +81,7 @@ export default function Editor() {
           />
         )}
 
-        <div className="inline-block ml-20 mt-10">
+        <div className="inline-block mt-10 ml-20">
           <button type="button" className="" onClick={startDrawing}>
             {buttonText}
           </button>

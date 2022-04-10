@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.art-container {
+  caret-color: transparent;
+}
+
 body {
   font-family: "Hubballi", cursive;
 }
